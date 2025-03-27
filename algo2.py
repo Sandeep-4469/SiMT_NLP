@@ -1,4 +1,5 @@
 import torch
+import sentencepiece as spm
 
 def adaptive_inference(model, src_tokens, sp, kmin, kmax, rho_k, return_positions=False):
     """
@@ -21,11 +22,12 @@ def adaptive_inference(model, src_tokens, sp, kmin, kmax, rho_k, return_position
     y = []
     k = 1
     READ_TOKEN_ID = sp.piece_to_id("<pad>")  # Using PAD token for READ action
+    EOS_TOKEN_ID = sp.piece_to_id("</s>")  # End-of-sequence token ID
     read_positions = []
     
     print(f"🔍 Initial src_tokens: {src_tokens}")
     
-    while len(src_tokens) < kmax and (not y or y[-1] != sp.piece_to_id("</s>")):
+    while len(src_tokens) < kmax and (not y or y[-1] != EOS_TOKEN_ID):
         if k < kmin:
             src_tokens.append(READ_TOKEN_ID)
         else:
@@ -48,3 +50,8 @@ def adaptive_inference(model, src_tokens, sp, kmin, kmax, rho_k, return_position
         print(f"Step {k}: src_tokens={src_tokens}, y={y}, read_positions={read_positions}")
     
     return (y, read_positions) if return_positions else y
+
+# Load SentencePiece model to retrieve EOS_TOKEN_ID
+sp = spm.SentencePieceProcessor(model_file="bpe.model")
+EOS_TOKEN_ID = sp.piece_to_id("</s>")
+print("EOS Token ID:", EOS_TOKEN_ID)
