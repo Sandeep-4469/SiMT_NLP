@@ -39,7 +39,7 @@ def evaluate_model(model, dataloader, sp, kmin=3, kmax=10, rho_k=[0.9]*10):
     return {"BLEU": bleu_score}
 
 if __name__ == "__main__":
-    print("🚀 Evaluating Model...")
+    print("Evaluating Model...")
     metrics = evaluate_model(model, test_dataloader, sp)
-    print("✅ Evaluation Completed!")
+    print("Evaluation Completed!")
     print(metrics)
