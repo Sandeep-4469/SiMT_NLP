@@ -1,15 +1,6 @@
 # Simultaneous Machine Translation with Adapters (SiMT_NLP)
 
-A PyTorch implementation of fixed and adaptive simultaneous machine translation strategies using adapter modules, based on the paper ["Fixed and Adaptive Simultaneous Machine Translation Strategies Using Adapters"](https://arxiv.org/abs/XXXX.XXXX).
-
-## Table of Contents
-- [Features](#features)
-- [Installation](#installation)
-- [Project Structure](#project-structure)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Testing](#testing)
-- [Acknowledgments](#acknowledgments)
+A PyTorch implementation of fixed and adaptive simultaneous machine translation strategies using adapter modules, based on the paper ["Fixed and Adaptive Simultaneous Machine Translation Strategies Using Adapters"](https://arxiv.org/pdf/2407.13469).
 
 ## Features
 - 🚀 Transformer model with lightweight adapter modules
@@ -23,7 +14,7 @@ A PyTorch implementation of fixed and adaptive simultaneous machine translation 
 ## Installation
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/SiMT_NLP.git
+git clone https://github.com/Sandeep-4469/SiMT_NLP.git
 cd SiMT_NLP
 
 pip install -r requirements.txt
@@ -43,4 +34,4 @@ SiMT_NLP/
 ├── run.sh               # Training automation script
 └── README.md            # Project documentation
 
-./run.sh
+python3 train.py
