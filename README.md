@@ -21,15 +21,11 @@ pip install -r requirements.txt
 
 SiMT_NLP/
 │
-├── adapters.py          # Adapter module implementation for Transformer
-├── model.py             # Transformer model with adapter integration
-├── utils.py             # Utility functions (padding, tokenization, etc.)
+├── algo2.py          # Adapter module implementation for Transformer
+├── eval.py             # Transformer model with adapter integration
+├── train.py             # Utility functions (padding, tokenization, etc.)
 ├── dataset.py           # Dataset loading and preprocessing
 ├── train.py             # Training script with checkpoint management
-├── fixed_inference.py   # Fixed wait-k inference implementation (Algorithm 1 from paper)
-├── adaptive_inference.py# Adaptive inference (Algorithm 2 from paper)
-├── config.py            # Configuration settings (hyperparameters & enums)
-├── test.py              # Interactive translation interface
 ├── requirements.txt     # Python dependencies
 ├── run.sh               # Training automation script
 └── README.md            # Project documentation
